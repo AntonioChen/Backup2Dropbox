@@ -1,6 +1,7 @@
 #!/bin/bash
 # It's based on dropbox_uploader.sh
-# https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh
+# wget --no-check-certificate https://raw.github.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh
+# wget --no-check-certificate https://raw.github.com/AntonioChen/Backup2Dropbox/master/backup2Dropbox.sh
 
 SCRIPT_DIR="/root/Backup"	#The folder of dropbox_uploader.sh
 DROPBOX_DIR="/VPSBackup"	#The folder in Dropbox

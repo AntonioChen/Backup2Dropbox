@@ -19,8 +19,8 @@ fi
 if [ $BACKUP_MYSQL -eq 1 ]
 then
 	echo "Back up mysql."
-	mysqldump -u $MYSQL_USER -h $MYSQL_SERVER -p$MYSQL_PASS --all-databases > "$BACKUP_DST/$NOW-Databases.sql"
-	TARFILE=$TARFILE" $BACKUP_DST/$NOW-Databases.sql"
+	mysqldump -u $MYSQL_USER -h $MYSQL_SERVER -p $MYSQL_PASS --all-databases > "$NOW-Databases.sql"
+	TARFILE=$TARFILE" $NOW-Databases.sql"
 else
 	echo "Skip backing up mysql."
 fi
@@ -29,8 +29,8 @@ fi
 if [ $BACKUP_CRON -eq 1 ]
 then
 	echo "Back up crontab."
-	crontab -l >> "$BACKUP_DST/$NOW-crontab.txt"
-	TARFILE=$TARFILE" $BACKUP_DST/$NOW-crontab.txt"
+	crontab -l > "$NOW-crontab.txt"
+	TARFILE=$TARFILE" $NOW-crontab.txt"
 else
 	echo "Skip Backing up crontab."
 fi
@@ -51,7 +51,7 @@ then
 
 	# Delete local tmp file
 	echo "Delete local tmp file"
-	rm -f "$BACKUP_DST/$NOW-Databases.sql" "$BACKUP_DST/$NOW-crontab.txt" "$DESTFILE"
+	rm -f "$NOW-Databases.sql" "$NOW-crontab.txt" "$DESTFILE"
 else
 	echo "No files to upload"
 fi

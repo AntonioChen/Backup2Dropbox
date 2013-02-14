@@ -1,5 +1,5 @@
 #---------------DON'T EDIT---------------
-BACKUP_DST="/backup2Dropbox"		#tmp folder
+BACKUP_DST="/tmp"		#tmp folder
 
 WEEK=$(date +"%A")
 NOW=$(date +"%Y-%m-%d_%H-%M-%S")

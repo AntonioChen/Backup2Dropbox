@@ -1,3 +1,4 @@
+#!/bin/bash
 #---------------DON'T EDIT---------------
 BACKUP_DST="/tmp"		#tmp folder
 
@@ -38,8 +39,8 @@ fi
 # Tar all files
 if [ $BACKUP_FILE -eq 1 -o $BACKUP_MYSQL -eq 1 -o $BACKUP_CRON -eq 1 ]
 then
-	echo "Tar all files: $TARFILE"
-	tar cfz "$DESTFILE" $TARFILE
+	echo "Tar all files: $TARFILE except $EXCLUDE_SRC"
+	tar cfz "$DESTFILE" "$TARFILE" --exclude "$EXCLUDE_SRC"
 
 	#Delete old files
 	echo "Delete old files"

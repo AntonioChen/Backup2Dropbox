@@ -8,6 +8,7 @@ DROPBOX_DIR=""			#The folder in Dropbox
 
 BACKUP_FILE=0
 FILE_SRC="/svn /www"		#The folder to backup, using blank between different paths
+EXCLUDE_SRC="/root/lnmp0.9"	#
 
 BACKUP_MYSQL=0
 MYSQL_SERVER="localhost"

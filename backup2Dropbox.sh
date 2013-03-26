@@ -8,7 +8,7 @@ DROPBOX_DIR=""			#The folder in Dropbox
 
 BACKUP_FILE=0
 FILE_SRC="/svn /www"		#The folder to backup, using blank between different paths
-EXCLUDE_SRC="/root/lnmp0.9"	#
+EXCLUDE_SRC="/root/lnmp0.9"	#The exclude folder
 
 BACKUP_MYSQL=0
 MYSQL_SERVER="localhost"
@@ -23,6 +23,7 @@ export DROPBOX_DIR
 
 export BACKUP_FILE
 export FILE_SRC
+export EXCLUDE_SRC
 
 export BACKUP_MYSQL
 export MYSQL_SERVER

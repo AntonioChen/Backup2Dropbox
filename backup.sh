@@ -20,7 +20,7 @@ fi
 if [ $BACKUP_MYSQL -eq 1 ]
 then
 	echo "Back up mysql."
-	mysqldump -u $MYSQL_USER -h $MYSQL_SERVER -p $MYSQL_PASS --all-databases > "$NOW-Databases.sql"
+	mysqldump -u$MYSQL_USER -h$MYSQL_SERVER -p$MYSQL_PASS --all-databases > "$NOW-Databases.sql"
 	TARFILE=$TARFILE" $NOW-Databases.sql"
 else
 	echo "Skip backing up mysql."
@@ -40,7 +40,7 @@ fi
 if [ $BACKUP_FILE -eq 1 -o $BACKUP_MYSQL -eq 1 -o $BACKUP_CRON -eq 1 ]
 then
 	echo "Tar all files: $TARFILE except $EXCLUDE_SRC"
-	tar cfz "$DESTFILE" "$TARFILE" --exclude "$EXCLUDE_SRC"
+	tar cfz "$DESTFILE" $TARFILE --exclude "$EXCLUDE_SRC"
 
 	#Delete old files
 	echo "Delete old files"
